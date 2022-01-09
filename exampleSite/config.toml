@@ -27,7 +27,7 @@ enableRobotsTXT = true
   filename = "sitemap.xml"
 
 [params]
-  author = ""
+  author = "John Doe"
   favicon = ""
   site_logo = ""
   description = "The last theme you'll ever need. Maybe."
@@ -46,3 +46,17 @@ enableRobotsTXT = true
   background_color_class = "bg-black"
   featured_image = "/images/gohugo-default-sample-hero-image.jpg"
   recent_posts_number = 2
+  ShowBio = true
+  Avatar = "/images/default-avatar.png"
+
+[params.indieWeb]
+  EmailAddress = "johndoe@email.com"
+  FacebookUser = "johndoe"
+  FlickrUser = "johndoe"
+  GitHubUser = "johndoe"
+  LinkedInUser = "johndoe"
+  TwitterUser = "johndoe"
+  InstagramUser = "johndoe"
+  Country = "Neverland"
+  City = "Evercity"
+
