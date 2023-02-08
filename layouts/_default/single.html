@@ -6,7 +6,7 @@
 {{ define "main" }}
   {{ $baseurl := .Site.BaseURL | sanitizeurl }}
   {{ $section := .Site.GetPage "section" .Section }}
-  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+  <article class="flex-l flex-wrap justify-between mw8 center ph3 h-entry">
     <header class="mt4 w-100">
       <aside class="instapaper_ignoref b helvetica tracked">
           {{/*
@@ -21,7 +21,7 @@
       </h1>
       {{ with .Params.author | default .Site.Params.author }}
       <p class="tracked">
-          By <strong>
+          By <strong class="p-author">
           {{ if reflect.IsSlice . }}
               {{ delimit . ", " | markdownify }}
           {{else}}
@@ -32,7 +32,7 @@
       {{ end }}
       {{/* Hugo uses Go's date formatting is set by example. Here are two formats */}}
       {{ if not .Date.IsZero }}
-      <time class="f6 mv4 dib tracked" {{ printf `datetime="%s"` (.Date.Format "2006-01-02T15:04:05Z07:00") | safeHTMLAttr }}>
+      <time class="f6 mv4 dib tracked dt-published" {{ printf `datetime="%s"` (.Date.Format "2006-01-02T15:04:05Z07:00") | safeHTMLAttr }}>
         {{- .Date.Format (default "January 2, 2006" .Site.Params.date_format) -}}
       </time>
       {{end}}
@@ -55,7 +55,7 @@
       {{ end }}
     </header>
     <div class="nested-copy-line-height lh-copy {{ $.Param "post_content_classes"  | default "serif"}} f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
-      {{- .Content -}}
+      <span class="e-content">{{- .Content -}}</span>
       {{- partial "tags.html" . -}}
       <div class="mt6 instapaper_ignoref">
       {{ if .Site.DisqusShortname }}

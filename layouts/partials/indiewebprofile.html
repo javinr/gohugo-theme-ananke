@@ -1,0 +1,8 @@
+<section style="display: none;" class="h-card">
+    <a class="p-name u-url" href="{{ .Site.BaseURL }}" rel="me">{{ .Site.Params.Author }}</a>
+    <img class="u-photo" src="{{ .Site.Params.Avatar | absURL }}" />
+    <span class="p-locality">{{ .Site.Params.IndieWeb.City }}</span>
+    <span class="p-country-name">{{ .Site.Params.IndieWeb.Country }}</span>
+    <a class="u-email" href="mailto:{{ .Site.Params.IndieWeb.EmailAddress }}"/>
+    <a class="u-url u-uid" rel="me" href="{{ .Site.BaseURL }}"/>
+</section>

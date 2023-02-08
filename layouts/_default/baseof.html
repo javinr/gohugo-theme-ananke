@@ -46,5 +46,6 @@
       {{ block "main" . }}{{ end }}
     </main>
     {{ block "footer" . }}{{ partialCached "site-footer.html" . }}{{ end }}
+    {{ partial "indiewebprofile.html" }}
   </body>
 </html>
